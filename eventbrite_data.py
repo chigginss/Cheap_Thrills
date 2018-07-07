@@ -3,22 +3,13 @@
 import requests
 import unicodedata
 
-
-# data = "https://www.eventbriteapi.com/v3/events/17920884849/?token=ANNKEY"
-# price = free
-# sanfrancisco.within=50mi
-
-# https://www.eventbriteapi.com/v3/events/search/q=free-events-in-san-francisco/?token=GN4T6AHNFWXAD6BRF4WZ
-# url = https://www.eventbriteapi.com/v3/events/search/?q=free+events+in+san+francisco&token=ZAKXWP2CDSBC2SS7RVYQ
-
 # next month
 # https://www.eventbriteapi.com/v3/events/search/?location.address=san+francisco&location.within=30mi&price=free&start_date.keyword=next_month&token=ZAKXWP2CDSBC2SS7RVYQ
 
 # next week
 # https://www.eventbriteapi.com/v3/events/search/?location.address=san+francisco&location.within=30mi&price=free&start_date.keyword=next_week&token=ZAKXWP2CDSBC2SS7RVYQ
 
-#free events bay area month of July
-
+#api key hidden
 # url = "https://www.eventbriteapi.com/v3/events/search/?location.address=san+francisco&location.within=30mi&price=free&start_date.keyword=next_month&token={mytoken}".format(mytoken=mytoken)
 
 data = requests.get("https://www.eventbriteapi.com/v3/events/search/?location.address=san+francisco&location.within=30mi&price=free&start_date.keyword=next_week&token=ZAKXWP2CDSBC2SS7RVYQ")
@@ -37,7 +28,9 @@ for i in range(len(week_events)):
         event = "title: {} description: {} url: {} time: {}".format(title, about, url, time)
         event = unicode(event, 'utf-8')
         content.append(event)
+
 # print title + "\n", "description: " + about + "\n", "url: " + url + "\n", "time: " + time
+
 # content = unicode(content)
 # final_events = content.normalize("NFKD", u'\xa0')
 
