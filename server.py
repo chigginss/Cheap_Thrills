@@ -29,7 +29,7 @@ def homepage():
     Home view of my project
     """
 
-    
+
     results = request.args.get("")
     return render_template("")
 
@@ -45,10 +45,10 @@ def this_months_events():
     results = request.args.get("")
     return render_template("")
 
-@app.route('/upcomming')
-def upcomming_events():
+@app.route('/upcoming')
+def upcoming_events():
     """
-    Lists all events for the upcomming month
+    Lists all events for the upcoming month
     """
     results = request.args.get("")
     return render_template("")
