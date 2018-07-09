@@ -54,9 +54,10 @@ def upcoming_events():
     return render_template("")
 
 #=============================================================================
+# User Profile / user list
 
-@app.route('/user')
-def user_profile():
+@app.route('/users/<user_id>')
+def user_profile(user_id):
     """
     Displays all events added to calendar by a given user. Other people
     can not view each other user profiles - it is for user to keep track personally
@@ -65,6 +66,21 @@ def user_profile():
 
     results = request.args.get("")
     return render_template("")
+
+@app.route('/users')
+def all_users():
+    """Show list of users"""
+# create a variable users that contains all of the users in database
+    users = User.query.all()
+    return render_template('all_users.html', users=users)
+
+@app.route('/users/<user_id>')
+def user_page(user_id):
+    """ Show user profile """
+
+    # user = User.query.filter_by(user_id=user_id).options(
+    #     db.joinedload('ratings')).one()
+    # return render_template('user.html', user=user)
 
 # =============================================================================
 # User Login / User Logout
