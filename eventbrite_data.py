@@ -35,16 +35,16 @@ for i in range(len(week_events)):
 # final_events = content.normalize("NFKD", u'\xa0')
 
 content = str(content)
-content = content.split(" ")
+content = content.split("\\xa0")
 
-for item in content:
-    if '\\xa0' == item:
-        item.replace('\\xa0', ' ')
-    elif '\\n' == item:
-        item.replace('\\n', ' ')
-    elif '\\n' == item:
-        item.replace('\n', ' ')
-    elif '\\n' == item:
-        item.replace('\xa0', ' ')
+# for item in content:
+#     if '\\xa0' == item:
+#         item.replace('\\xa0', ' ')
+#     elif '\\n' == item:
+#         item.replace('\\n', ' ')
+#     elif '\\n' == item:
+#         item.replace('\n', ' ')
+#     elif '\\n' == item:
+#         item.replace('\xa0', ' ')
 
 print " ".join(content)
