@@ -29,9 +29,8 @@ def homepage():
     Home view of my project
     """
 
-
     results = request.args.get("")
-    return render_template("")
+    return render_template("home.html")
 
 # =============================================================================
 # This/Next Month view
