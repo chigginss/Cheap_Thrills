@@ -1,5 +1,5 @@
 import jijna2
-from flask import flask
+from flask import Flask
 from flask import request, render_template, redirect, flash, session, jsonify
 from eventbrite_data import content
 # from flask_debugtoolbar import DebugToolbarExtension
@@ -66,7 +66,7 @@ def homepage():
     #         item.replace('\xa0', ' ')
 
     return render_template("home.html",
-                            content=content)
+                            data=content)
 
 # =============================================================================
 # This/Next Month view
