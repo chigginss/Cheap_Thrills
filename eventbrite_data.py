@@ -1,6 +1,5 @@
 """ Data from Eventbrite's API """
 
-import requests
 import unicodedata
 
 # next month

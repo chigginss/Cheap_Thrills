@@ -1,15 +1,18 @@
-import jijna2
-from flask import Flask
-from flask import request, render_template, redirect, flash, session, jsonify
-from eventbrite_data import content
+from jinja2 import StrictUndefined
+from flask import Flask, render_template, request, redirect, flash, session, jsonify
 # from flask_debugtoolbar import DebugToolbarExtension
-# from datetime import datetime
+from werkzeug.security import generate_password_hash, check_password_hash
+# from model import User, User_Search, Search, Outlet, connect_to_db, db
 # import pytz
-# import requests
-
+import os
+import requests
 
 app = Flask(__name__)
 
+app.secret_key = 'ABC'
+
+app.jinja_env.undefined = StrictUndefined
+app.jinja_env.auto_reload = True
 #A function that returns a web response is a VIEW
 # our function will return an HTML string
 # '/' is a python decorator that maps directly to the URL that the user requested
@@ -24,7 +27,7 @@ app = Flask(__name__)
 # =============================================================================
 # Home page displaying this weeks events
 
-@app.route('/', methods=[GET])
+@app.route('/')
 def homepage():
     """
     Home view of my project
