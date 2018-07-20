@@ -60,7 +60,7 @@ class User_Event(db.Model):
 ##############################################################################
 # Model definitions
 
-def connect_to_db(app, db_url='postgresql:///newsflashdb'):
+def connect_to_db(app, db_url='postgresql:///ctdb'):
     """ Connect database to Flask app"""
     app.config['SQLALCHEMY_DATABASE_URI'] = db_url
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False

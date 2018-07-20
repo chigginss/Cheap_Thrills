@@ -80,17 +80,17 @@ def this_months_events():
     results = request.args.get("")
     return render_template("")
 
-@app.route('/upcoming')
-def upcoming_events():
-    """
-    Lists all events for the upcoming month
-    """
-    results = request.args.get("")
-    return render_template("")
+# @app.route('/upcoming')
+# def upcoming_events():
+#     """
+#     Lists all events for the upcoming month
+#     """
+#     results = request.args.get("")
+#     return render_template("upcoming.html")
 
 #=============================================================================
 
-@app.route('/user')
+@app.route('/<user_id>')
 def user_profile():
     """
     Displays all events added to calendar by a given user. Other people
@@ -99,7 +99,7 @@ def user_profile():
     """
 
     results = request.args.get("")
-    return render_template("")
+    return render_template("user.html")
 
 # =============================================================================
 # User Login / User Logout
