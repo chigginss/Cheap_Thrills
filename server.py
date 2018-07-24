@@ -56,17 +56,8 @@ def homepage():
     # final_events = content.normalize("NFKD", u'\xa0')
 
     content = str(content)
-    # content = content.split("\\xa0")
-
-    # for item in content:
-    #     if '\\xa0' == item:
-    #         item.replace('\\xa0', ' ')
-    #     elif '\\n' == item:
-    #         item.replace('\\n', ' ')
-    #     elif '\\n' == item:
-    #         item.replace('\n', ' ')
-    #     elif '\\n' == item:
-    #         item.replace('\xa0', ' ')
+    new_content = content.split("\r")
+    content = " ".join(new_content)
 
     return render_template("home.html",
                             data=content)
@@ -80,8 +71,7 @@ def this_months_events():
     Lists all events for the current month
     """
 
-    results = request.args.get("")
-    return render_template("")
+    return render_template("thismonth.html")
 
 # @app.route('/upcoming')
 # def upcoming_events():
@@ -180,7 +170,7 @@ if __name__ == "__main__":
     app.config['DEBUG_TB_INTERCEPT_REDIRECTS'] = False
     # DebugToolbarExtension(app)
     # connect_to_db(app)
-    app.run()
+    app.run(port=5000, host='0.0.0.0')
 
 
 
