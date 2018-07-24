@@ -46,7 +46,7 @@ def homepage():
             about = (week_events[i].get('description')['text'] or " ").encode('utf-8')
             url = (week_events[i].get('url') or " ").encode('utf-8')
             time = (week_events[i].get('start')['local'] or " ").encode('utf-8')
-            event = "title: {} description: {} url: {} time: {}".format(title, about, url, time)
+            event = " - {} - description: {} url: {} time: {} | \n".format(title, about, url, time)
             event = unicode(event, 'utf-8')
             content.append(event)
 
@@ -55,9 +55,7 @@ def homepage():
     # content = unicode(content)
     # final_events = content.normalize("NFKD", u'\xa0')
 
-    content = str(content)
-    new_content = content.split("\r")
-    content = " ".join(new_content)
+    # final = "\n\n\n\n\n\n\n|||||||||||||||||||".join(content
 
     return render_template("home.html",
                             data=content)

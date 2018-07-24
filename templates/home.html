@@ -1,9 +1,12 @@
 {% extends "base.html" %}
 
     {% block content %}
-    <title> Title goes here </title>
+     <title> Cheap Thrills! </title>
+
+    {% for {{ event }} in {{ content }} %}
     <div style="overflow-y:scroll; height:400px;">
-        {{ data }}
+        <div>{{ event }}</div> 
     </div>
+    {% endfor %}
     
     {% endblock %}
