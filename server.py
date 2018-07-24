@@ -2,7 +2,7 @@ from jinja2 import StrictUndefined
 from flask import Flask, render_template, request, redirect, flash, session, jsonify
 # from flask_debugtoolbar import DebugToolbarExtension
 from werkzeug.security import generate_password_hash, check_password_hash
-# from model import User, User_Search, Search, Outlet, connect_to_db, db
+# from model import User, User_Events, Events, connect_to_db, db
 # import pytz
 import os
 import requests
@@ -13,16 +13,6 @@ app.secret_key = 'ABC'
 
 app.jinja_env.undefined = StrictUndefined
 app.jinja_env.auto_reload = True
-#A function that returns a web response is a VIEW
-# our function will return an HTML string
-# '/' is a python decorator that maps directly to the URL that the user requested
-# GET vs POST: Get does not change, Post does!
-# GET to view flights, POst to submit order
-# GET is implied by default on an HTML form AND default in Flask Routes
-# request.args.get() is for GET
-# request.form.get() is for POST
-
-# Currently are NO HTML forms to supply email/password too. Also NO data model / data base to hold info
 
 # =============================================================================
 # Home page displaying this weeks events
@@ -50,11 +40,6 @@ def homepage():
             event = unicode(event, 'utf-8')
             content.append(event)
 
-    # print title + "\n", "description: " + about + "\n", "url: " + url + "\n", "time: " + time
-
-    # content = unicode(content)
-    # final_events = content.normalize("NFKD", u'\xa0')
-
     # final = "\n\n\n\n\n\n\n|||||||||||||||||||".join(content
 
     return render_template("home.html",
@@ -71,14 +56,6 @@ def this_months_events():
 
     return render_template("thismonth.html")
 
-# @app.route('/upcoming')
-# def upcoming_events():
-#     """
-#     Lists all events for the upcoming month
-#     """
-#     results = request.args.get("")
-#     return render_template("upcoming.html")
-
 #=============================================================================
 
 @app.route('/<user_id>')
@@ -89,7 +66,6 @@ def user_profile():
     of past events
     """
 
-    results = request.args.get("")
     return render_template("user.html")
 
 # =============================================================================
