@@ -177,7 +177,10 @@ def register_user():
     return redirect('/register')
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.config['DEBUG_TB_INTERCEPT_REDIRECTS'] = False
+    # DebugToolbarExtension(app)
+    # connect_to_db(app)
+    app.run()
 
 
 

@@ -28,22 +28,7 @@ for i in range(len(week_events)):
         event = unicode(event, 'utf-8')
         content.append(event)
 
-# print title + "\n", "description: " + about + "\n", "url: " + url + "\n", "time: " + time
-
-# content = unicode(content)
-# final_events = content.normalize("NFKD", u'\xa0')
-
 content = str(content)
 content = content.split("\\xa0")
-
-# for item in content:
-#     if '\\xa0' == item:
-#         item.replace('\\xa0', ' ')
-#     elif '\\n' == item:
-#         item.replace('\\n', ' ')
-#     elif '\\n' == item:
-#         item.replace('\n', ' ')
-#     elif '\\n' == item:
-#         item.replace('\xa0', ' ')
 
 print " ".join(content)
