@@ -3,10 +3,12 @@
     {% block content %}
      <title> Cheap Thrills! </title>
 
-    {% for {{ event }} in {{ content }} %}
     <div style="overflow-y:scroll; height:400px;">
-        <div>{{ event }}</div> 
+        {% for event in data %}
+        <div id="events">
+            {{ event }}
+        </div>
+        {% endfor %}
     </div>
-    {% endfor %}
     
     {% endblock %}

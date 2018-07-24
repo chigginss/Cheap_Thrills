@@ -46,7 +46,7 @@ def homepage():
             about = (week_events[i].get('description')['text'] or " ").encode('utf-8')
             url = (week_events[i].get('url') or " ").encode('utf-8')
             time = (week_events[i].get('start')['local'] or " ").encode('utf-8')
-            event = " - {} - description: {} url: {} time: {} | \n".format(title, about, url, time)
+            event = " {} - description: {} url: {} time: {}".format(title, about, url, time)
             event = unicode(event, 'utf-8')
             content.append(event)
 

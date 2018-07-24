@@ -2,5 +2,10 @@
 
 #navbar {
 
-    background: black;
+    background-color: black;
+}
+
+#events {
+
+    border:1px solid black;
 }
