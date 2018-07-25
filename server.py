@@ -3,7 +3,6 @@ from flask import Flask, render_template, request, redirect, flash, session, jso
 # from flask_debugtoolbar import DebugToolbarExtension
 from werkzeug.security import generate_password_hash, check_password_hash
 # from model import User, User_Events, Events, connect_to_db, db
-# import pytz
 import os
 import requests
 
