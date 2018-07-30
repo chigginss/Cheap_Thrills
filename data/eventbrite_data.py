@@ -11,7 +11,7 @@ import unicodedata
 #api key hidden
 # url = "https://www.eventbriteapi.com/v3/events/search/?location.address=san+francisco&location.within=30mi&price=free&start_date.keyword=next_month&token={mytoken}".format(mytoken=mytoken)
 
-data = requests.get("https://www.eventbriteapi.com/v3/events/search/?location.address=san+francisco&location.within=30mi&price=free&start_date.keyword=next_week&token=ZAKXWP2CDSBC2SS7RVYQ")
+data = requests.get("https://www.eventbriteapi.com/v3/events/search/?location.address=san+francisco&location.within=30mi&price=free&start_date.keyword=next_week&token=MY_TOKEN")
 
 all_events = data.json()
 

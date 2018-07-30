@@ -1,7 +1,8 @@
 """ Creating an event with Google Calendar API """
 
 # take event data from eventbrite API
-# send to correct route via Flask
+# send to correct route via flask
+# source token from secrets.sh
 # add this event data to Google Calendar vis API 
 
 # Call the Calendar API
