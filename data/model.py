@@ -42,7 +42,7 @@ class Search(db.Model):
 class User_Event(db.Model):
     """ Tracks Events saved by User"""
 
-    __tablename__ = "user_searches"
+    __tablename__ = "user_saved_events"
 
     user_event_id = db.Column(db.Integer, autoincrement=True, primary_key=True)
 
