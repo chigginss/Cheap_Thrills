@@ -8,7 +8,7 @@ db = SQLAlchemy()
 # Model definitions
 
 class User(db.Model):
-    """User of Newsflash"""
+    """User"""
 
     __tablename__ = "users"
 
@@ -26,18 +26,21 @@ class User(db.Model):
         return "<User: user_id={}, email={}>".format(self.user_id, self.email)
 
 
-class Search(db.Model):
+class Event(db.Model):
     """Event saved by User on website."""
 
     __tablename__ = "events"
 
     event_id = db.Column(db.Integer, autoincrement=True, primary_key=True)
-    event_term = db.Column(db.String(64), unique=True)
+    event_title = db.Column(db.String(64), unique=True)
+    event_description = db.Column(db.String(64))
+    event_location = db.Column(db.String(64))
+    event_date = db.Column(db.String(64))
 
     def __repr__(self):
         """Representation of Search instance"""
 
-        return "<Search: event_id={}, event_term={}>".format(self.event_id, self.event_term)
+        return "<Event: event_id={}, event_title={}, event_description={}, event_location={}, event_date={}>".format(self.event_id, self.event_title, self.event_description, self.event_location, self.event_date)
 
 class User_Event(db.Model):
     """ Tracks Events saved by User"""
@@ -54,7 +57,7 @@ class User_Event(db.Model):
     def __repr__(self):
         """Representation of User instance"""
 
-        return "<Outlet: user_event_id={}, search_id={}, user_id={}>".format(self.user_event_id, self.event_id, self.user_id)
+        return "<User_Event: user_event_id={}, event_id={}, user_id={}>".format(self.user_event_id, self.event_id, self.user_id)
 
 
 ##############################################################################
