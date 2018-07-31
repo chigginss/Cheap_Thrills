@@ -54,7 +54,7 @@ class User_Event(db.Model):
                          nullable=False)
  
     def __repr__(self):
-        """Representation of an user search instance"""
+        """Representation of an event saved by a user instance"""
 
         return "<User_Event: user_event_id={}, event_id={}, user_id={}>".format(self.user_event_id, self.event_id, self.user_id)
 
