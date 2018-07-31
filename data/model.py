@@ -16,7 +16,7 @@ class User(db.Model):
     password = db.Column(db.String(256))
 
     events = db.relationship("Event",
-                            secondary = "user_events",
+                            secondary ="user_events",
                             backref="users")
 
     def __repr__(self):
@@ -31,18 +31,18 @@ class Event(db.Model):
     __tablename__ = "events"
 
     event_id = db.Column(db.Integer, autoincrement=True, primary_key=True)
-    event_title = db.Column(db.String(64), unique=True)
+    event_title = db.Column(db.String(64))
     event_description = db.Column(db.String(64))
     event_location = db.Column(db.String(64))
     event_date = db.Column(db.String(64))
 
     def __repr__(self):
-        """Representation of Search instance"""
+        """Representation of an Event instance"""
 
         return "<Event: event_id={}, event_title={}, event_description={}, event_location={}, event_date={}>".format(self.event_id, self.event_title, self.event_description, self.event_location, self.event_date)
 
 class User_Event(db.Model):
-    """ Tracks Events saved by User"""
+    """ Tracks Events saved by User """
 
     __tablename__ = "user_events"
 
@@ -54,7 +54,7 @@ class User_Event(db.Model):
                          nullable=False)
  
     def __repr__(self):
-        """Representation of User instance"""
+        """Representation of an user search instance"""
 
         return "<User_Event: user_event_id={}, event_id={}, user_id={}>".format(self.user_event_id, self.event_id, self.user_id)
 
